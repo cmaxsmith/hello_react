@@ -7,7 +7,7 @@ class SimpleGoldenAcornApp extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      number: 0
+      number: acornNumber
     };
     this.increase = this.increase.bind(this)
     this.decrease = this.decrease.bind(this)
@@ -16,10 +16,6 @@ class SimpleGoldenAcornApp extends React.Component {
 componentDidMount(){
   document.addEventListener("keydown", this.keyPress)
 }
-
-// componentWillMount(){
-//   document.removeEventListener("keydown", this.keyPress)
-// }
 
   increase() {
     acornNumber++
@@ -70,11 +66,16 @@ function Display(props) {
   );
 }
 
+Button.propTypes = {
+  name: PropTypes.string.isRequired,
+  event: PropTypes.func.isRequired
+}
+
 ReactDOM.render(
   <SimpleGoldenAcornApp />,
   document.getElementById('root')
-)
-
+  )
+  
 
 
 
