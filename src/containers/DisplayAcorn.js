@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import Display from '../components/Display'
 
-const mapStateToProps = (state) => {
-  return {
-    value: state.amount
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     value: state.amount,
+//     string: 'abcd'
+//   };
+// };
 
 
 const DisplayAcorn = connect(
-  mapStateToProps
+  // mapStateToProps
 )(Display);
 
 export default DisplayAcorn;

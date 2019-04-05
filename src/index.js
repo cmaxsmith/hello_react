@@ -4,98 +4,16 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { acornEaten, acornBought} from './action_creators/action_creators'
 import store from './store'
-import  App  from './App'
-
-// const initialState = {
-//   number: 0
-// };
-
-// function deleteAcorn(acornCount){
-//   return {
-//     type: 'EAT_ACORN',
-//     todo: acornCount - 1
-//   };
-// };
-  
-// function increaseAcorn(acornCount){
-//   return {
-//     type: 'BUY_ACORN',
-//     todo:  acornCount + 1
-//   }
-// };
-
-ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('root'))
-  
-  
-// const rootReducer = (state = initialState, action)=> {
-//   if (action.type ==='BUY_ACORN' || action.type === 'EAT_ACORN'){
-//     return {
-//       ...state,
-//       number: action.todo
-//     }
-//   } else {
-//     return state
-//   }
-// }
-
-// const store = createStore(acorns, composeWithDevTools());
-
-console.log(store.getState());
-store.subscribe(() => console.log('Look ma, Redux!!'))
-store.dispatch(acornBought(1))
-console.log(store.getState().number);
-store.dispatch(acornBought(1))
-console.log(store.getState().number);
-store.dispatch(acornEaten(1))
-console.log(store.getState().number);
+import  App  from './components/ReduxApp'
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import AppContainer from './containers/AppCont'
 
 
 
-
-// function Button(props){
-//   return (<button onClick={props.event}>
-//   {props.name}
-//   </button>)
-// }
-
-// function Display(props) {
-//   return (
-//     <div>
-//       {props.children}
-//     </div>
-//   );
-// }
-
-// let testConnect = connect([mapStateToProps], [mapDispatchToProps],[mergeProps], [options])
-
-// const initialState = {
-//   articles : []
-// };
-
-// function rootReducer (state = initialState, action) {
-//   if (action.type === ADD_ARTICLE) {
-//     return Object.assign({}, state, {
-//       articles: state.articles.concat(action.payload)
-//     });
-//   };
-//   return state
-// };
-
-// const ADD_ARTICLE = "ADD_ARTICLE";
-
-// function addArticle(payload){
-//   return { type: ADD_ARTICLE, payload}
-// }
-
-// console.log(store.getState());
-// store.subscribe(() => console.log('Look ma, Redux!!'))
-// store.dispatch( addArticle({ title: 'React Redux Tutorial for Beginners', id: 1 }) )
-// store.dispatch( addArticle({ title: 'React Redux Tutorial for Beginners', id: 1 }) )
-// console.log(store.getState());
+ReactDOM.render(<Provider store={store}><AppContainer/></Provider>, document.getElementById('root'))
 
 
-// // window.store = store;
-// // window.addArticle = addArticle
+
 ///////// wednesday below here//////////
 
 // let acornNumber = 0;
