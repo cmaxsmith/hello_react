@@ -4,13 +4,38 @@ import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { acornEaten, acornBought} from './action_creators/action_creators'
 import store from './store'
-import  App  from './components/ReduxApp'
+import  App  from './components/App'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import AppContainer from './containers/AppCont'
+import {SimpleGoldenAcornApp}  from './AcornState'
+import NavBar from './components/NavBar'
+import Home from './components/Home'
+import MainContainer from './components/MainContainer'
 
 
 
-ReactDOM.render(<Provider store={store}><AppContainer/></Provider>, document.getElementById('root'))
+ReactDOM.render(
+<BrowserRouter>
+  <Provider store={store}>
+    {/* <Route exact path="/" component={Home} />
+    <Route path="/simple/states" component={SimpleGoldenAcornApp} />
+    <Route path="/simple/redux" component={AppContainer} /> */}
+
+  {/* <AppContainer/>
+  <SimpleGoldenAcornApp/> */}
+    {/* <AppContainer> */}
+      {/* <Route exact path='/simple/states"' component={SimpleGoldenAcornApp} /> */}
+      {/* <Route path='/test' component={Test} /> */}
+    {/* </AppContainer> */}
+    <MainContainer>
+      <Route exact path="/" component={Home} />
+      <Route path="/simple/states" component={SimpleGoldenAcornApp} />
+      <Route path="/simple/redux" component={AppContainer} />
+
+    </MainContainer>
+  </Provider>
+</BrowserRouter>, 
+document.getElementById('root'))
 
 
 

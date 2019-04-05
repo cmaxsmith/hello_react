@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 // import { acornBought } from '../../src/action_creators/action_creators';
-import App from '../components/ReduxApp'
+import App from '../components/App'
 
 const mapStateToProps = (state) => {
   return {

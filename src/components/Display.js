@@ -9,11 +9,3 @@ function Display(props) {
 }
 
 export default Display
-
-// function Display(props) {
-//   return (
-//     <div>
-//       {props.children}
-//     </div>
-//   );
-// }
